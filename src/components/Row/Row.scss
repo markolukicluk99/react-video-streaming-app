@@ -1,23 +1,26 @@
 .wrapper{
-    .rowPosters{
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    padding: 20px;
-    &::-webkit-scrollbar {
-        display: none;
+    margin-left: 20px;
+    .title{
+        color: whitesmoke;
     }
-        .rowPoster{
-            object-fit: contain;
-            width: 100%;
-            max-height: 100px;
-            margin-right: 10px;
-            transition: transform 450ms;
+        .rowPosters{
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding: 20px;
+        &::-webkit-scrollbar {
+        display: none;
+        }
+            .rowPoster{
+                object-fit: contain;
+                width: 100%;
+                max-height: 150px;
+                margin-right: 10px;
+                transition: transform 450ms;
 
-            &:hover{
-                transform: scale(1.08);
-                
-            }
+                &:hover{
+                    transform: scale(1.08);
+                }
         }
     }
 }

@@ -19,7 +19,7 @@ function Row( { title, getURL } ) {
 
     return (
         <div className="wrapper">
-            <h2>{title}</h2>
+            <h2 className="title">{title}</h2>
                 <div className="rowPosters">
                     {movies.map(movie => (
                         <img key={movie.id} className="rowPoster" src={`${base_url_images}${movie.poster_path}`} alt={movie.title} />
