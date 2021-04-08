@@ -3,7 +3,7 @@ import axios from '../../modules/axios';
 
 import "./Row.scss";
 
-const base_url_images = "https://image.tmdb.org/t/p/original/";
+const base_url_images = "https://image.tmdb.org/t/p/w500/";
 
 function Row( { title, getURL } ) {
     const [movies, setMovies] = useState([]);

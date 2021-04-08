@@ -1,20 +1,18 @@
-import Row from './components/Row/Row.jsx'
-import apiClient from './modules/apiClient'
+import React from 'react';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import Homepage from './pages/homepage';
 
 import "./App.scss"
 
 function App() {
   return (
-    <div className="container">
-      {/* HEADER */}
-      <h1 className="header">Hello 24i!</h1>
-      <Row title="Popular Movies" getURL={apiClient.getMovieList} />
-      <Row title="Popular Series" getURL={apiClient.getTVList} />
-      <Row title="Family" getURL={apiClient.getFamilyMovies} />
-      <Row title="Documentaries" getURL={apiClient.getDocumentaryMovies} />
-
-
+    <Router>
+    <div className="App">
+      <Route exact path="/" render={ () => <Redirect to="/homepage" /> }/>
+      <Route path="/homepage" component={Homepage} />
+      {/* <Route path="/streaming" component={StreamingPage} /> */}
     </div>
+    </Router>
   );
 }
 
