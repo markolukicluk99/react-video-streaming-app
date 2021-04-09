@@ -7,8 +7,15 @@ function Homepage() {
   return (
     <div className="wrapper">
       <Row title="Popular Movies" getURL={apiClient.getMovieList} />
-      <Row title="Popular Series" getURL={apiClient.getTVList} />
+
+      <Row
+        title="Popular Series"
+        getURL={apiClient.getTVList}
+        isSeries={true}
+      />
+
       <Row title="Family" getURL={apiClient.getFamilyMovies} />
+
       <Row title="Documentaries" getURL={apiClient.getDocumentaryMovies} />
     </div>
   );
