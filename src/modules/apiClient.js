@@ -1,4 +1,5 @@
-const APIKEY = "ced6e2375b75f3b35fbfa226c4500fd5";
+const APIKEY = process.env.REACT_APP_API_KEY
+console.log(APIKEY);
 
 const requests = {
     getMovieList: `/movie/popular?api_key=${APIKEY}&language=en-US&page=1`,
