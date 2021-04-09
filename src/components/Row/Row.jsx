@@ -15,10 +15,10 @@ function Row({ title, getURL, isSeries }) {
   useEffect(() => {
     const getData = async () => {
       const request = await axios.get(getURL);
-      setMovies(request.data.results);
       if (request.data === null) {
         console.warn("Error");
       }
+      setMovies(request.data.results);
     };
     getData();
   }, [getURL]);

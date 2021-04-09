@@ -20,7 +20,6 @@ function MovieDetail() {
     const getData = async () => {
       const request = await axios.get(getURL);
       setSource(request.data);
-      console.log(request.data);
     };
     getData();
   }, [getURL]);

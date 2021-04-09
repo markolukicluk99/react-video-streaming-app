@@ -10,13 +10,11 @@ const base_url_images = "https://image.tmdb.org/t/p/w500/";
 
 function Search() {
   let history = useHistory();
-  let { value } = useParams();
+  let { value = null } = useParams();
 
   const [searchResult, setSearchResult] = useState(null);
 
-  const getURL = `search/movie?api_key=${APIKEY}&language=en-US&query=${
-    value === undefined ? null : value
-  }&page=1&include_adult=false`;
+  const getURL = `search/movie?api_key=${APIKEY}&language=en-US&query=${value}&page=1&include_adult=false`;
 
   useEffect(() => {
     const getData = async () => {

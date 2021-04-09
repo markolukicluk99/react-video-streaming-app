@@ -5,8 +5,7 @@ import { Alert } from "react-bootstrap";
 
 import "./streaming.scss";
 
-function Streaming(props) {
-  console.log(props);
+function Streaming() {
   const videoEl = useRef();
   let history = useHistory();
   const [alertShown, setAlertShown] = useState(true);
@@ -38,7 +37,7 @@ function Streaming(props) {
     if (video) {
       const player = new shaka.Player(video);
       player.addEventListener("error", () =>
-        console.log("Error during playback.")
+        console.warn("Error during playback.")
       );
       player
         .load("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")

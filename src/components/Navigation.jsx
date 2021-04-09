@@ -5,14 +5,11 @@ import { useHistory } from "react-router-dom";
 import { Form, FormControl } from "react-bootstrap";
 
 function Navigation() {
-  let history = useHistory();
+  const history = useHistory();
 
   const onInputChange = ({ target: { value } }) => {
-    if (value === "") {
-      history.push(`/homepage/`);
-    } else {
-      history.push(`/search/${value}`);
-    }
+    const newRoute = value ? `/search/${value}` : `/homepage/`;
+    history.push(newRoute);
   };
 
   return (
