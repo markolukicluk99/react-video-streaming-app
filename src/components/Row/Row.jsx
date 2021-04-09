@@ -15,7 +15,6 @@ function Row({ title, getURL, isSeries }) {
     const getData = async () => {
       const request = await axios.get(getURL);
       setMovies(request.data.results);
-      console.log(request.data);
       if (request.data === null) {
         console.warn("Error");
       }
