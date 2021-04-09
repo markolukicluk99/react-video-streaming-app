@@ -1,0 +1,33 @@
+.rowComponentWrapper {
+    &.searchWrapper {
+        margin-left: 20px;
+        padding-top: 100px;
+    }
+
+    .title {
+        color: whitesmoke;
+    }
+
+    .rowPosters {
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding: 20px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .rowPoster {
+            object-fit: contain;
+            width: 200px;
+            max-height: 100%;
+            margin-right: 10px;
+            transition: transform 450ms;
+
+            &:hover {
+                transform: scale(1.08);
+            }
+        }
+    }
+}
