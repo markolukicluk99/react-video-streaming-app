@@ -5,7 +5,7 @@ import apiClient from "../modules/apiClient";
 
 function Homepage() {
   return (
-    <div className="wrapper">
+    <div className="homepageWrapper">
       <Row title="Popular Movies" getURL={apiClient.getMovieList} />
 
       <Row
