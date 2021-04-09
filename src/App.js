@@ -18,10 +18,9 @@ function App() {
       <Navigation />
       <Route exact path="/" render={ () => <Redirect to="/homepage" /> }/>
       <Route path="/homepage" component={Homepage} />
-      <Route path="/search" component={Search} />
       <Route path="/detail/:type/:id" component={MovieDetail} />
       <Route path="/streaming" component={Streaming} />
-      {/* <Route path="/streaming" component={StreamingPage} /> */}
+      <Route path="/search/:value" component={Search} />
     </div>
     </Router>
   );
