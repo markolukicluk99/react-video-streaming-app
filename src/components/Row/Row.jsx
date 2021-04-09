@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../modules/axios";
 import { useHistory } from "react-router-dom";
+import { Col, Spinner } from "react-bootstrap";
 
 import "./Row.scss";
 
@@ -27,25 +28,31 @@ function Row({ title, getURL, isSeries }) {
   };
 
   return (
-    <div className="wrapper">
-      <h2 className="title">{title}</h2>
-      {movies ? (
-        <div className="rowPosters">
-          {movies.map((movie) => (
-            <img
-              onClick={() => redirect(movie.id)}
-              key={movie.id}
-              className="rowPoster"
-              src={`${base_url_images}${movie.poster_path}`}
-              alt={movie.title}
-            />
-          ))}
-        </div>
-      ) : (
-        <div>
-          <h1>LOADING {/* SPINNER */}</h1>
-        </div>
-      )}
+    <div className="rowComponentWrapper">
+      <Col>
+        <h2 className="title">{title}</h2>
+        {movies ? (
+          <div className="rowPosters">
+            {movies.map((movie) => (
+              <img
+                onClick={() => redirect(movie.id)}
+                key={movie.id}
+                className="rowPoster"
+                src={`${base_url_images}${movie.poster_path}`}
+                alt={movie.title}
+              />
+            ))}
+          </div>
+        ) : (
+          <div>
+            <h1>
+              <Spinner animation="border" role="status">
+                <span className="sr-only">Loading...</span>
+              </Spinner>
+            </h1>
+          </div>
+        )}
+      </Col>
     </div>
   );
 }
