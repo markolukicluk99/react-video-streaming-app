@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import { useHistory } from "react-router-dom";
+import { Form, FormControl } from "react-bootstrap";
 
 function Navigation() {
+  let history = useHistory();
+
+  const onInputChange = ({ target: { value } }) => {
+    if (value === "") {
+      history.push(`/homepage/`);
+    } else {
+      history.push(`/search/${value}`);
+    }
+  };
+
   return (
     <div>
       <Navbar collapseOnSelect fixed="top" expand="sm" bg="dark" variant="dark">
@@ -12,10 +24,14 @@ function Navigation() {
           <Nav className="mr-auto">
             <Nav.Link href="/homepage">Home</Nav.Link>
           </Nav>
-          {/* <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
-        </Form> */}
+          <Form inline>
+            <FormControl
+              onChange={(e) => onInputChange(e)}
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2"
+            />
+          </Form>
         </Navbar.Collapse>
       </Navbar>
     </div>
